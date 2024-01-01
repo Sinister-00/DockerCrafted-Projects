@@ -1,6 +1,6 @@
 # Getting Started
 
-### navigate to `docker-compose.yml` is in the mongoDB folder if you are in root directory.
+### navigate to `docker-compose.yaml` is in the mongoDB folder if you are in root directory.
 
 ```bash
 cd mongoDB
