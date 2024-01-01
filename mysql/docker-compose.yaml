@@ -1,0 +1,19 @@
+version: "3.1"
+services:
+  db:
+    image: mysql
+    restart: always # restart container if it shuts down
+    environment:
+      MYSQL_ROOT_PASSWORD: theekke
+      MYSQL_DATABASE: sampleDB
+      MYSQL_USER: sunny
+      MYSQL_PASSWORD: root
+    ports:
+      - 3306:3306 # default port for mysql
+    volumes:
+      - ./mysql:/var/lib/mysql # persist data even if container shuts down
+  adminer: # adminer is a web interface for mysql database
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

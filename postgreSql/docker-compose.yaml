@@ -1,0 +1,20 @@
+version: "3"
+services:
+  db:
+    image: postgres # use latest official postgres version
+    restart: always # restart if container fails
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432 # default postgres port
+
+    environment:
+      - POSTGRES_DB=theekke
+      - POSTGRES_USER=sunny # change this to your username
+      - POSTGRES_PASSWORD=root # change this to your password
+
+  adminer: # use latest official adminer version
+    image: adminer
+    restart: always # restart if container fails
+    ports:
+      - 8080:8080
